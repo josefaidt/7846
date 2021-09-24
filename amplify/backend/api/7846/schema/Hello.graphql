@@ -1,0 +1,7 @@
+type Hello @model {
+  name: String
+}
+
+extend type Mutation {
+  sayHello(name: String!): String! @function(name: "SayHelloFunction-${env}")
+}

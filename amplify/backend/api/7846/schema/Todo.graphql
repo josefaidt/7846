@@ -1,0 +1,15 @@
+type MyFancyTodo @model {
+  id: ID!
+  name: String!
+  description: String
+}
+
+input MyFancyTodoInput {
+  name: String!
+  description: String
+}
+
+extend type Mutation {
+  createFancyTodo(input: MyFancyTodoInput!): MyFancyTodo!
+    @function(name: "MyFancyTodoFunction-${env}")
+}
